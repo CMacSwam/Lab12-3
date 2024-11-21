@@ -40,7 +40,12 @@ void readFromCSVFile(string filename) {
 	while (true) {
 		inFile >> word;;
 		if (word.length() >= 1) {
-			counterWords++;
+			for (int i = 0; i < word.length(); i++) {
+				if ((word[i] >= 65 && word[i] <= 90) || (word[i] <= 122 && word[i] >= 97)) {
+					counterWords++;
+					break;
+				}
+			}
 			for (int i = 0; i < word.length(); i++) {
 				if ((word[i] >= 65 && word[i] <= 90) || (word[i] <= 122 && word[i] >= 97) ){
 					characterCounter++;
